@@ -39,3 +39,5 @@ print(a.dtype == np.dtype('int'))
 #NumPy 的型態有些可以縮寫寫成這樣：
 dt = np.dtype('i4') # int32
 print(dt)
+
+
