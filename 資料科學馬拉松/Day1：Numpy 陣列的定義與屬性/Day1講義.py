@@ -29,7 +29,7 @@ print(type(a)) #<type 'numpy.ndarray'>
 #ndarray.data:陣列所存在的記憶體位置
 print("ndim",a.ndim)
 print("shape",a.shape)
-print("size",a.size)
+print("size",a.size) #陣列當中有幾個元素
 print("dtype",a.dtype)
 print("itemsize",a.itemsize)
 print("data",a.data)
