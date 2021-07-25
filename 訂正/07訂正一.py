@@ -49,9 +49,11 @@ print(c.tolist())
 print(list(c))
 ##進階
 def tolist(iterable):
-    if type(iterable) != np.ndarray:
+    if type(iterable) != np.ndarray:  # 若 input 的型態不是 numpy array，我們就把 input 原封不動回傳出來
+        
         return iterable
-    return [ tolist(obj) for obj in iterable]
+    return [ tolist(obj) for obj in iterable] # 若 input 的型態是 numpy array，我們就把該 array 拆開，再次用一樣的邏輯，也就是拆開後的每個元素變成 input
+        
 print(tolist(a))
 print(tolist(b))
 print(tolist(c))
