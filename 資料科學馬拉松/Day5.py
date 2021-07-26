@@ -20,6 +20,21 @@ b = np.array([True, False, True, False] )
 print(a & b)  #[ True False False False]
 print(a | b) #[ True  True  True False]
 #邏輯運算與比較運算都會產生一組有布林所組成的陣列：
+#若要理解這個，必須知道 python 的邏輯是依照數學邏輯 (true false) 處理的，底下舉出最簡單的例子:
+#「且」(全都為真才為真，否則為否)的部分:
+##false 且 false = false
+#flase 且 true = false
+#true 且 true = true
+#「或」(至少有一個真即真，否則為否)的部分:
+#false 或 false = false
+#false 或 true = true
+#true 或 true = true
+#回到上面的問題:
+#若 a 與 b 都是邏輯值(true false)，則 &、| 跟 and、or 沒什麼差別 (所以可以看到輸出符合預期，可以用我上面提到的運算規則去對照圖片中的結果)，那本問題基本上就解決，但若要再探討 & 與 | ，就繼續往下看吧。
+#若 a 與 b是數值 ，例如 a=2, b=4，則 & 、 | 會把 a 與 b 轉為二進制 (a = 10，b=100)，在二進制中 1 代表 true、0 代表 false，所以
+#a&b=0 (從最右邊開始加，0&0=false&false=false=0，再來右邊數來第二個，1&0=true&fasle=false=0，再往左一個位數發現 a 少一個數字那就忽略不動作，算出的二進位數值再轉為十進位制作為回傳值)
+#a|b=6 (作為練習)
+
 
 #利用布林值作為篩選的條件：遮罩
 #可以用一組 True/False 做為每一個位置的篩選條件，這種方法稱為遮罩（Mask）：
