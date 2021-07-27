@@ -39,9 +39,12 @@
 #利用欄位名稱選取單行資料
 #可以使用類似於列表跟字串的索引選取方法，直接使用 [...] 的方式挑選出欄位： 
 import pandas as pd
+import numpy as np
 df = pd.DataFrame([[1,2,3],[4,5,6]], index = ['a','b'], columns = ['A', 'B', 'C'])
-print(df['A'])
+print(df['A']) 
 print(df['B'])
+df = pd.DataFrame(np.random.random(size=(5, 3)))
+print(df[0])  #若欄位的名稱非字串，可用數字替代選取第0欄
 
 #利用欄位名稱選取多行資料
 #如果被挑選的欄位有多個的話，可以用兩層的方式做選取：
@@ -49,6 +52,8 @@ import pandas as pd
 df = pd.DataFrame([[1, 2, 3], [4, 5, 6]], index=['a', 'b'], columns=['A', 'B', 'C'])
 print(df[['A', 'B']])
 print(df[['A', 'C']])
+df = pd.DataFrame(np.random.random(size=(5, 3)))
+print(df[[0,1,2]])  #若欄位的名稱非字串，可用數字替代，選取第0，1，2欄
 
 #利用列索引位置選取單列/多列資料
 #除了利用索引的方式之外，在列表也可以用切片取出部分的元素。在 DataFrame 則可以使用切片的方式選出以列為單位的資料：
