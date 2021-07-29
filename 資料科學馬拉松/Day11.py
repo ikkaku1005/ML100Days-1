@@ -6,13 +6,18 @@
 #算術運算是指一般數字間的加、減、乘、除或次方等等的運算， NumPy 陣列的運算有「對齊」、「廣播」和「遮罩」三種向量的運算特性。
 import pandas as pd
 import numpy as np
-df1 = pd.DataFrame([1,2,3])
-df2 = pd.DataFrame([1,1,1])
+df1 = pd.DataFrame([[1,2,3]])
+df2 = pd.DataFrame([[1,1,1]])
 print(df1 + df2)
-#   0
-#0  2
-#1  3
-#2  4
+#   0  1  2
+#0  2  3  4
+#當 list 是一維型態時，
+#裏頭的每個 element 會代表資料表的每筆資料，
+#所以資料表會顯示多個 row 但只會有一個 column；
+#而二維型態時，
+#內層的 [] 中的每個 element 代表資料表中的每個 column，
+#外層的 [] 中的每個 element 代表資料表中的每筆資料（row）
+
 #不同欄位的算術運算
 #在 DataFrame 的「對齊」的特性很嚴格，欄位對不上會產生錯誤的結果：
 df1 = pd.DataFrame([[1, 2, 3]], columns=['a', 'b', 'c'])
