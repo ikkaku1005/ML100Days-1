@@ -108,7 +108,7 @@ df = pd.DataFrame({
     'col1': ['A', 'a', 'B', 'b'],
     'col2': [2, 1, 9, 8]
 })
-print(df.sort_values(by = 'col2' , ascending = False))
+print(df.sort_values(by = 'col2' , ascending = False))  
 #  col1  col2
 #2    B     9
 #3    b     8
