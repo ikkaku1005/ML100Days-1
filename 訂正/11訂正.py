@@ -71,7 +71,7 @@ print(data.mean(axis = 1))
 #0    2.0
 #1    5.0
 print(data.sum().argmax()) #data.sum().argmax()  取得最大值的那一欄
-
+#2  #第二欄總和最大
 
 #3. 承上題，請問：
 #1) 哪一比的資料總合最小 2) 哪一欄位的資料總合最小

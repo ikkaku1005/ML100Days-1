@@ -50,10 +50,12 @@ print(df[0])  #若欄位的名稱非字串，可用數字替代選取第0欄
 #如果被挑選的欄位有多個的話，可以用兩層的方式做選取：
 import pandas as pd
 df = pd.DataFrame([[1, 2, 3], [4, 5, 6]], index=['a', 'b'], columns=['A', 'B', 'C'])
-print(df[['A', 'B']])
+print(df[['A', 'B']]) 
 print(df[['A', 'C']])
 df = pd.DataFrame(np.random.random(size=(5, 3)))
 print(df[[0,1,2]])  #若欄位的名稱非字串，可用數字替代，選取第0，1，2欄
+
+
 
 #利用列索引位置選取單列/多列資料
 #除了利用索引的方式之外，在列表也可以用切片取出部分的元素。在 DataFrame 則可以使用切片的方式選出以列為單位的資料：
@@ -65,10 +67,16 @@ print(df[0:2]) #選出1、二列
 #   A  B  C
 #a  1  2  3
 #b  4  5  6
+print("======================")
+
 
 #用 loc, iloc, ix 取得行與列
 #前面兩種方法可以利用行或列的角度來選取資料，不過一次僅能做一個維度的篩選。為了有效的使用 DataFrame 二維的特性，在 Pandas 當中提供了一種座標選取的方法 .loc[...]：
 df = pd.DataFrame([[1, 2, 3], [4, 5, 6]], index=['a', 'b'], columns=['A', 'B', 'C'])
+print(df)
+#    A  B  C
+# a  1  2  3
+# b  4  5  6
 print(df.loc['a','A']) # .loc[列,行]
 #1
 print(df.loc['a',['A','B']])
@@ -116,12 +124,19 @@ print(type(df.loc))
 
 #用 iat, at 取得資料
 #如果只是想要選出「數值」資料的話，可以直接用 iat 跟 at 設定座標：
+df = pd.DataFrame([[1, 2, 3], [4, 5, 6]], index=['a', 'b'], columns=['A', 'B', 'C'])
+#    A  B  C
+# a  1  2  3
+# b  4  5  6
 print(df.loc['a','A'])
 #1
 print(df.iloc[0,1])
 #2
-print(df.at['a', 'A']) # 1  只選出數值
-print(df.iat[0, 1]) #  2  只選出數值
+print(df.at['a', 'A'])  #.at["列","行"]
+# 1  只選出數值
+print(df.iat[0, 1]) #.iat[列,行]
+#  2  只選出數值
+
 
 #根據條件篩選資料（遮罩）
 #在 DataFrame 當中，也有沿用 NumPy 陣列重要的遮罩用法，可以用它來進行條件的篩選。

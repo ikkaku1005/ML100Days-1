@@ -90,6 +90,12 @@ print(df.sort_values(by = ['col1'])) #df.sort_values() 排序函數
 #2    B     9
 #1    a     1
 #3    b     8
+print(df.sort_values(by = ['col1','col2']))
+#   col1  col2
+# 0    A     2
+# 2    B     9
+# 1    a     1
+# 3    b     8
 
 #、sort_values()函數的具體參數
 #用法：
@@ -108,7 +114,9 @@ df = pd.DataFrame({
     'col1': ['A', 'a', 'B', 'b'],
     'col2': [2, 1, 9, 8]
 })
-print(df.sort_values(by = 'col2' , ascending = False))  
+
+
+print(df.sort_values(by = 'col2' , ascending = False))  #由上往下遞減
 #  col1  col2
 #2    B     9
 #3    b     8

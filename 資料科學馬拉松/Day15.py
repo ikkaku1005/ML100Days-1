@@ -98,7 +98,7 @@ print(df.melt('Name'))  #Name欄不用動，其餘欄位名稱轉為欄位值
 #3    Jiao      Age      22
 #4    John      Age      15
 #5  Shiela      Age      50
-print(df.melt(value_vars = 'Name')) #指轉換Name的欄位圍欄位值
+print(df.melt(value_vars = 'Name')) #只轉換Name的欄位圍欄位值
 #  variable   value
 #0     Name    Jiao
 #1     Name    John
@@ -130,6 +130,36 @@ print(df.pivot(index = 'foo', columns = 'bar', values ='baz'))
 #one  1  2  3
 #two  4  5  6
 
+df = pd.DataFrame({'fff': ['one', 'one', 'one', 'two', 'two',
+                           'two'],
+                   'bbb': ['P', 'Q', 'R', 'P', 'Q', 'R'],
+                   'baa': [2, 3, 4, 5, 6, 7],
+                   'zzz': ['h', 'i', 'j', 'k', 'l', 'm']})
+print(df)
+#    fff bbb  baa zzz
+# 0  one   P    2   h
+# 1  one   Q    3   i
+# 2  one   R    4   j
+# 3  two   P    5   k
+# 4  two   Q    6   l
+# 5  two   R    7   m
+print(df.pivot(index = 'fff', columns = 'bbb' ,values = 'baa'))
+# bbb  P  Q  R
+# fff
+# one  2  3  4
+# two  5  6  7
+print(df.pivot(index='fff', columns='bbb')['baa'])
+# bbb  P  Q  R
+# fff
+# one  2  3  4
+# two  5  6  7
+print(df.pivot(index='fff', columns='bbb', values=['baa', 'zzz']))
+#    baa       zzz      
+# bbb   P  Q  R   P  Q  R
+# fff
+# one   2  3  4   h  i  j
+# two   5  6  7   k  l  m
+
 #索引轉欄位 .unstack()、欄位轉索引 .stack()，注意最外層為 0 ，往內層一格加一。
 #欄位名稱轉為欄位值.melt()，其中參數
 #id_vars：不需要被轉換的列名
@@ -138,3 +168,5 @@ print(df.pivot(index = 'foo', columns = 'bar', values ='baz'))
 #index：新資料的索引名稱 
 #columns：新資料的欄位名稱
 #values：新資料的值名稱
+
+

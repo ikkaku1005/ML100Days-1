@@ -1,4 +1,7 @@
 #D14：Pandas 的外部資料存取
+
+import numpy as np
+import pandas as pd
 #DataFrame
 #DataFrame 是一種二維的資料結構，使用表格的方式儲存資料。我們會把直向的欄位稱為是 Column、橫向的資料稱為是 Row。
 #建立 Pandas 物件
@@ -11,6 +14,12 @@
 #讀寫csv
 #CSV 的資料由很多文本資料組成，資料之間以逗點隔開。
 #首先我們使用 Pandas 的套件中 pd.read_csv 讀取一個 CSV 檔案夾中的 iris.csv，讀取之後即為 DataFrame 的資料型態。有時候資料太多不想一次讀取這麼多行可以使用 usercols 參數指定讀取的行名稱。
+df = pd.read_csv('https://raw.githubusercontent.com/dataoptimal/posts/master/data%20cleaning%20with%20python%20and%20pandas/property%20data.csv')
+df = pd.read_csv(
+    'https://raw.githubusercontent.com/dataoptimal/posts/master/data%20cleaning%20with%20python%20and%20pandas/property%20data.csv',
+    keep_default_na=True,
+    na_values=['na', '--']
+)     # 利用 na_values 自訂缺失值
 
 #iris_data= pd.read_csv("iris.csv")
 #iris_data
@@ -123,6 +132,16 @@ print(temp_data.fillna(method = "bfill")) #前補後一列的數值
 #Missing Value 是什麼？
 #很常在讀寫資料的過程中，產出 NaN 的型態，那這個東西到底是什麼呢？
 #NaN 是一種被定義在 NumPy 中的特殊型態，全名為 Not a Number，通常被當成是「空值/缺失值」使用。
+
+# 利用 to_csv 寫出資料
+df = pd.DataFrame({'name': ['Raphael', 'Donatello'],
+                   'mask': ['red', 'purple'],
+                   'weapon': ['sai', 'bo staff']})
+
+df.to_csv(index=False)
+df.to_csv('out.zip', compression = 'zip')# 利用 compression_opts 設定壓縮格式
+
+
 
 #缺值資料的處理
 #缺值是程式或模型中無法正確計算的資料，必須先處理乾淨後才可以進行後面的操作。常見的處理策略如下：
