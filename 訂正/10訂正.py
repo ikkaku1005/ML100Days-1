@@ -39,12 +39,10 @@ print(df[df[0] > 20])
 # 參考解答
 
 # - 1. filtered by first column > 20?
-
 print(df.loc[df[0] > 20])
 print(df[df[0] > 20])
 
 # - 2. filtered by first column + second column > 50
-
 print(df[df[0] + df[1] > 50])
 print(df.loc[df[0] + df[1] > 50])
 

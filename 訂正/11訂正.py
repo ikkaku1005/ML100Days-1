@@ -55,6 +55,7 @@ print(a.sort_values(by = ["visits"], ascending = False, axis = 0))
 #2) 該筆資料平均數
 df = pd.DataFrame(np.random.random(size=(5, 3)))
 print(df)
+
 #1) 該欄位的平均數
 print(df.mean())  #沒有標記就是指對每一欄(axis = 0)做平均數 
 print(df - df.mean()) 
