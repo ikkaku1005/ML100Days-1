@@ -50,6 +50,7 @@ print(df_multi_level_cols1.index, df_multi_level_cols1.stack().index)
 #    pounds       2
 #dog kg           3
 #    pounds       4
+
 #.unstack() 效果
 print(df_multi_level_cols1.stack().unstack())
 #          weight       

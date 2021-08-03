@@ -23,9 +23,7 @@ print(df)
 #j    dog  3.0       1       no
 
 #2.將資料依照 Age 欄位由小到大排序，再依照 visits 欄位由大到小排序
-print(df.sort_values(by = ["age"], ascending = True, axis = 0))
-a = df.sort_values(by = ["age"], ascending = True, axis = 0)
-print(a.sort_values(by = ["visits"], ascending = False, axis = 0))
+# print(df.sort_values(by = ["age"], ascending = True, axis = 0))
 #  animal  age  visits priority
 #c  snake  0.5       2       no
 #f    cat  2.0       3       no
@@ -37,18 +35,34 @@ print(a.sort_values(by = ["visits"], ascending = False, axis = 0))
 #i    dog  7.0       2       no
 #d    dog  NaN       3      yes
 #h    cat  NaN       1      yes
+# a = df.sort_values(by = ["age"], ascending = True, axis = 0)
+# print(a.sort_values(by = ["visits"], ascending = False, axis = 0))
+#  animal  age  visits priority
+#f    cat  2.0       3       no
+#b    cat  3.0       3      yes
+#d    dog  NaN       3      yes
+#c  snake  0.5       2       no
+#e    dog  5.0       2       no
+#i    dog  7.0       2       no
+#a    cat  2.5       1      yes
+#j    dog  3.0       1       no
+#g  snake  4.5       1       no
+#h    cat  NaN       1      yes
+print(df.sort_values(by=["age",'visits'], ascending=(True,False), axis=0))
+#  animal  age  visits priority
+# c  snake  0.5       2       no
+# f    cat  2.0       3       no
+# a    cat  2.5       1      yes
+# b    cat  3.0       3      yes
+# j    dog  3.0       1       no
+# g  snake  4.5       1       no
+# e    dog  5.0       2       no
+# i    dog  7.0       2       no
+# d    dog  NaN       3      yes
+# h    cat  NaN       1      yes
 
-#  animal  age  visits priority
-#f    cat  2.0       3       no
-#b    cat  3.0       3      yes
-#d    dog  NaN       3      yes
-#c  snake  0.5       2       no
-#e    dog  5.0       2       no
-#i    dog  7.0       2       no
-#a    cat  2.5       1      yes
-#j    dog  3.0       1       no
-#g  snake  4.5       1       no
-#h    cat  NaN       1      yes
+
+
 
 #2. 一個包含兩個欄位的 DataFrame，將每個數字減去
 #1) 該欄位的平均數

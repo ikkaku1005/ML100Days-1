@@ -26,6 +26,7 @@ score_df = score_df.set_index('student_id')
 # 8                   55             77             76  girl
 # 9                   25             57             60  girl
 # 10                  88             40             43  girl
+
 ##運用索引將資料分開再取平均
 boy_score_df = score_df.loc[score_df.sex=='boy']
 girl_score_df = score_df.loc[score_df.sex=='girl']
