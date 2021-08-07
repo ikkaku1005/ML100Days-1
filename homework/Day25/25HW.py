@@ -61,7 +61,7 @@ plt.show()
 
 
 m = Basemap(projection = "mill" ,llcrnrlat = -90,llcrnrlon = -180, urcrnrlat = 90
-            ,resolution = None, urcrnrlon = 180) # 成圖設定resolution 
+            ,resolution = 'i', urcrnrlon = 180) # 成圖設定resolution 
 
 #創建邊線
 m.drawcoastlines()
